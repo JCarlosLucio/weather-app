@@ -1,8 +1,9 @@
 import React from 'react';
+import WeatherApp from './WeatherApp';
 import './App.scss';
 
 function App() {
-  return <div className="App" />;
+  return <WeatherApp />;
 }
 
 export default App;
