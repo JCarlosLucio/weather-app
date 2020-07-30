@@ -2,9 +2,14 @@ import React from 'react';
 
 function WeatherForm() {
   return (
-    <div>
-      <h1>Weather Form</h1>
-    </div>
+    <form>
+      <select>
+        <option>Celsius</option>
+        <option>Fahrenheit</option>
+      </select>
+      <input placeholder="City..." />
+      <button>Get weather</button>
+    </form>
   );
 }
 

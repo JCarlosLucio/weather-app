@@ -5,6 +5,7 @@ import WeatherInfo from './WeatherInfo';
 function WeatherApp() {
   return (
     <div>
+      <h1>WEATHER APP</h1>
       <WeatherForm />
       <WeatherInfo />
     </div>
