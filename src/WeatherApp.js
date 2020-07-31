@@ -7,6 +7,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 function WeatherApp() {
   // make state for weather response
   const [weather, setWeather] = useState(null);
+  const [temps, setTemps] = useState(null);
 
   const getWeather = async (city) => {
     try {
@@ -23,6 +24,12 @@ function WeatherApp() {
         pressure: weatherData.main.pressure,
         humidity: weatherData.main.humidity,
       });
+      setTemps({
+        temp: weatherData.main.temp,
+        max: weatherData.main['temp_max'],
+        min: weatherData.main['temp_min'],
+        feelsLike: weatherData.main['feels_like'],
+      });
     } catch (e) {
       console.error(e);
     }
@@ -32,7 +39,7 @@ function WeatherApp() {
     <div>
       <h1>WEATHER APP</h1>
       <WeatherForm getWeather={getWeather} />
-      <WeatherInfo {...weather} />
+      <WeatherInfo {...weather} {...temps} />
     </div>
   );
 }
