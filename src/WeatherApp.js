@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import WeatherForm from './WeatherForm';
 import WeatherInfo from './WeatherInfo';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 function WeatherApp() {
+  // make state for weather response
+  const [weather, setWeather] = useState(null);
+
   const getWeather = async (city) => {
     try {
       const res = await fetch(
@@ -12,6 +15,14 @@ function WeatherApp() {
       );
       const weatherData = await res.json();
       console.log(weatherData);
+      setWeather({
+        city: weatherData.name,
+        country: weatherData.sys.country,
+        weather: weatherData.weather[0].main,
+        description: weatherData.weather[0].description,
+        pressure: weatherData.main.pressure,
+        humidity: weatherData.main.humidity,
+      });
     } catch (e) {
       console.error(e);
     }
@@ -21,7 +32,7 @@ function WeatherApp() {
     <div>
       <h1>WEATHER APP</h1>
       <WeatherForm getWeather={getWeather} />
-      <WeatherInfo />
+      <WeatherInfo {...weather} />
     </div>
   );
 }
