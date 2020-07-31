@@ -20,7 +20,7 @@ function WeatherApp() {
   return (
     <div>
       <h1>WEATHER APP</h1>
-      <WeatherForm />
+      <WeatherForm getWeather={getWeather} />
       <WeatherInfo />
     </div>
   );
