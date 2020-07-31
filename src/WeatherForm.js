@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 
-function WeatherForm() {
+function WeatherForm({ getWeather }) {
   const [city, setCity] = useState('');
   return (
-    <form>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        getWeather(city);
+        setCity('');
+      }}
+    >
       <select>
         <option>Celsius</option>
         <option>Fahrenheit</option>
