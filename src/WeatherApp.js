@@ -59,6 +59,15 @@ function WeatherApp() {
     <div>
       <h1>WEATHER APP</h1>
       <WeatherForm getWeather={getWeather} />
+      <select
+        value={tempType}
+        onChange={(e) => {
+          setTempType(e.target.value);
+        }}
+      >
+        <option value="c">Celsius</option>
+        <option value="f">Fahrenheit</option>
+      </select>
       <WeatherInfo {...weather} {...transformTemps(temps, tempType)} />
     </div>
   );
