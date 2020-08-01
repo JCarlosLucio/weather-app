@@ -10,10 +10,6 @@ function WeatherForm({ getWeather }) {
         setCity('');
       }}
     >
-      <select>
-        <option>Celsius</option>
-        <option>Fahrenheit</option>
-      </select>
       <input
         type="text"
         id="city"
