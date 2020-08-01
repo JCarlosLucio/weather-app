@@ -59,8 +59,7 @@ function WeatherApp() {
     <div>
       <h1>WEATHER APP</h1>
       <WeatherForm getWeather={getWeather} />
-
-      <WeatherInfo {...weather} {...temps} />
+      <WeatherInfo {...weather} {...transformTemps(temps, tempType)} />
     </div>
   );
 }
