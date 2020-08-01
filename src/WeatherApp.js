@@ -8,6 +8,7 @@ function WeatherApp() {
   // make state for weather response
   const [weather, setWeather] = useState(null);
   const [temps, setTemps] = useState(null);
+  const [tempType, setTempType] = useState('c');
 
   const getWeather = async (city) => {
     try {
