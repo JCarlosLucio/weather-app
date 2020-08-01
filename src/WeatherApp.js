@@ -34,11 +34,31 @@ function WeatherApp() {
       console.error(e);
     }
   };
+  const toFahrenheit = (K) => {
+    return Math.round((K - 273.15) * (9 / 5) + 32);
+  };
+
+  const toCelsius = (K) => {
+    return Math.round(K - 273.15);
+  };
+
+  const transformTemps = (obj, type) => {
+    const newTemps = {};
+    for (const key in obj) {
+      if (type === 'c') {
+        newTemps[key] = toCelsius(obj[key]);
+      } else {
+        newTemps[key] = toFahrenheit(obj[key]);
+      }
+    }
+    return newTemps;
+  };
 
   return (
     <div>
       <h1>WEATHER APP</h1>
       <WeatherForm getWeather={getWeather} />
+
       <WeatherInfo {...weather} {...temps} />
     </div>
   );
