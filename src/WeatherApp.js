@@ -27,6 +27,8 @@ function WeatherApp() {
       );
       const weatherData = await res.json();
       console.log(weatherData);
+      if (weatherData.cod !== 200)
+        throw new Error(`${weatherData.cod}: ${weatherData.message}`);
       setWeather({
         city: weatherData.name,
         country: weatherData.sys.country,
