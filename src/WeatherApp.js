@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import WeatherForm from './WeatherForm';
+import WeatherTempSelect from './WeatherTempSelect';
 import WeatherInfo from './WeatherInfo';
 import { convertTemps } from './Helpers';
 
@@ -41,15 +42,7 @@ function WeatherApp() {
     <div>
       <h1>WEATHER APP</h1>
       <WeatherForm getWeather={getWeather} />
-      <select
-        value={tempType}
-        onChange={(e) => {
-          setTempType(e.target.value);
-        }}
-      >
-        <option value="c">Celsius</option>
-        <option value="f">Fahrenheit</option>
-      </select>
+      <WeatherTempSelect tempType={tempType} setTempType={setTempType} />
       <WeatherInfo {...weather} {...convertTemps(temps, tempType)} />
     </div>
   );
