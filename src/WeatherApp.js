@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import WeatherForm from './WeatherForm';
 import WeatherInfo from './WeatherInfo';
+import { convertTemps } from './Helpers';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -35,25 +36,6 @@ function WeatherApp() {
       console.error(e);
     }
   };
-  const toFahrenheit = (K) => {
-    return Math.round((K - 273.15) * (9 / 5) + 32);
-  };
-
-  const toCelsius = (K) => {
-    return Math.round(K - 273.15);
-  };
-
-  const transformTemps = (obj, type) => {
-    const newTemps = {};
-    for (const key in obj) {
-      if (type === 'c') {
-        newTemps[key] = toCelsius(obj[key]);
-      } else {
-        newTemps[key] = toFahrenheit(obj[key]);
-      }
-    }
-    return newTemps;
-  };
 
   return (
     <div>
@@ -68,7 +50,7 @@ function WeatherApp() {
         <option value="c">Celsius</option>
         <option value="f">Fahrenheit</option>
       </select>
-      <WeatherInfo {...weather} {...transformTemps(temps, tempType)} />
+      <WeatherInfo {...weather} {...convertTemps(temps, tempType)} />
     </div>
   );
 }
