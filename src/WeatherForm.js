@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-function WeatherForm({ getWeather }) {
-  const [city, setCity] = useState('');
+function WeatherForm({ setCity }) {
+  const [inputCity, setInputCity] = useState('');
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        getWeather(city);
-        setCity('');
+        setCity(inputCity);
+        setInputCity('');
       }}
     >
       <input
@@ -16,8 +16,8 @@ function WeatherForm({ getWeather }) {
         placeholder="City..."
         name="city"
         required
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
+        value={inputCity}
+        onChange={(e) => setInputCity(e.target.value)}
       />
       <button>Get weather</button>
     </form>
