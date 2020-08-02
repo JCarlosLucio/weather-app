@@ -12,9 +12,11 @@ function WeatherApp() {
   const [weather, setWeather] = useState(null);
   const [temps, setTemps] = useState(null);
   const [tempType, setTempType] = useState('c');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(
     () => {
+      setIsLoading(true);
       getWeather(city);
     },
     [city]
@@ -43,6 +45,7 @@ function WeatherApp() {
         min: weatherData.main['temp_min'],
         feelsLike: weatherData.main['feels_like'],
       });
+      setIsLoading(false);
     } catch (e) {
       console.error(e);
     }
@@ -53,7 +56,11 @@ function WeatherApp() {
       <h1>WEATHER APP</h1>
       <WeatherForm setCity={setCity} />
       <WeatherTempSelect tempType={tempType} setTempType={setTempType} />
-      <WeatherInfo {...weather} {...convertTemps(temps, tempType)} />
+      {isLoading ? (
+        <h1>Loading... </h1>
+      ) : (
+        <WeatherInfo {...weather} {...convertTemps(temps, tempType)} />
+      )}
     </div>
   );
 }
