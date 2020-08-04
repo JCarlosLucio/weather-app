@@ -1,0 +1,32 @@
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+.WeatherInfo {
+  @include flex(column);
+
+  &-global {
+    @include flex(row);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  &-weather {
+    @include flex(row);
+    justify-content: space-around;
+    align-items: flex-end;
+    text-align: center;
+    padding: 1rem;
+    h1 {
+      font-size: 6rem;
+    }
+  }
+
+  &-details {
+    @include flex(row);
+    padding: 1rem;
+  }
+}
