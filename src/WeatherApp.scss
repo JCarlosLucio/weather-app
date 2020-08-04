@@ -3,4 +3,24 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 1.8rem;
   font-weight: 300;
+
+  &-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+    margin-bottom: 0.5rem;
+    background-image: radial-gradient(
+      circle farthest-corner at 0.8% 3.1%,
+      rgba(255, 188, 224, 1) 0%,
+      rgba(170, 165, 255, 1) 46%,
+      rgba(165, 255, 205, 1) 100.2%
+    );
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+
+    h1 {
+      font-size: 2.7rem;
+    }
+  }
 }
