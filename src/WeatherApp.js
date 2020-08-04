@@ -53,7 +53,7 @@ function WeatherApp() {
   };
 
   return (
-    <div>
+    <div className="WeatherApp">
       <h1>WEATHER APP</h1>
       <WeatherForm setCity={setCity} />
       <WeatherTempSelect tempType={tempType} setTempType={setTempType} />
