@@ -1,4 +1,5 @@
 import React from 'react';
+import './WeatherInfo.scss';
 
 function WeatherInfo({
   city,
@@ -13,20 +14,37 @@ function WeatherInfo({
   feelsLike,
 }) {
   return (
-    <div>
-      <h1>Weather Info</h1>
-      <h3>Weather: {weather}</h3>
-      <h3>Description: {description}</h3>
-      <h3>Day</h3>
-      <h3>
-        {city}, {country}
-      </h3>
-      <h3>Feels Like: {feelsLike} </h3>
-      <h3>Temp: {temp} </h3>
-      <h3>Max: {max} </h3>
-      <h3>Min: {min} </h3>
-      <h3>Pressure: {pressure}</h3>
-      <h3>Humidity: {humidity}%</h3>
+    <div className="WeatherInfo">
+      <section className="WeatherInfo-global">
+        <div>
+          <h1>
+            {city}, {country}
+          </h1>
+          <h4>Day</h4>
+        </div>
+      </section>
+      <section className="WeatherInfo-weather">
+        <div>
+          <h2>{weather}</h2>
+          <h1>🌦</h1>
+          <h6>{description}</h6>
+        </div>
+        <div>
+          <h1> {temp}°</h1>
+          <h6>Feels Like: {feelsLike}° </h6>
+          <h5>
+            {min}° / {max}°
+          </h5>
+        </div>
+      </section>
+      <section className="WeatherInfo-details">
+        <div />
+
+        <div>
+          <h6>Pressure: {pressure} mbar</h6>
+          <h6>Humidity: {humidity}%</h6>
+        </div>
+      </section>
     </div>
   );
 }
