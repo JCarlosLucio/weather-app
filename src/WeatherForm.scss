@@ -3,4 +3,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  input[type=text] {
+    background-color: rgba(255, 255, 255, 0.534);
+    height: 2.5rem;
+    width: 12rem;
+    margin: 0.5rem;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    text-transform: uppercase;
+    border: none;
+    &:focus:required:invalid {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+    &:required:valid {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+  }
 }
