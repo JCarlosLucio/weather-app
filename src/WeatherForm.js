@@ -21,7 +21,7 @@ function WeatherForm({ setCity }) {
         value={inputCity}
         onChange={(e) => setInputCity(e.target.value)}
       />
-      <button>Get weather</button>
+      <button>sunny?</button>
     </form>
   );
 }
