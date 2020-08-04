@@ -3,6 +3,7 @@ import WeatherForm from './WeatherForm';
 import WeatherTempSelect from './WeatherTempSelect';
 import WeatherInfo from './WeatherInfo';
 import { convertTemps } from './Helpers';
+import './WeatherApp.scss';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
