@@ -5,6 +5,7 @@ function WeatherForm({ setCity }) {
   const [inputCity, setInputCity] = useState('');
   return (
     <form
+      className="WeatherForm"
       onSubmit={(e) => {
         e.preventDefault();
         setCity(inputCity);
