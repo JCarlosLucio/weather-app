@@ -1,6 +1,6 @@
 import React from 'react';
 
-function WeatherTempSelect({ tempType, setTempType }) {
+function WeatherTempToggle({ tempType, setTempType }) {
   return (
     <select
       value={tempType}
@@ -14,4 +14,4 @@ function WeatherTempSelect({ tempType, setTempType }) {
   );
 }
 
-export default WeatherTempSelect;
+export default WeatherTempToggle;
