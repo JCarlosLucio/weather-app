@@ -7,7 +7,7 @@ function WeatherTempToggle({ tempType, setTempType }) {
       <input
         id="toggle-c"
         className=" WeatherTempToggle-left"
-        name="toggle-c"
+        name="toggle"
         type="radio"
         defaultChecked={tempType === 'c'}
         value="c"
@@ -21,7 +21,7 @@ function WeatherTempToggle({ tempType, setTempType }) {
       <input
         id="toggle-f"
         className="WeatherTempToggle-right"
-        name="toggle-f"
+        name="toggle"
         type="radio"
         defaultChecked={tempType === 'f'}
         value="f"
