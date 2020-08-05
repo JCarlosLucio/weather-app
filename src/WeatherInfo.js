@@ -4,6 +4,7 @@ import './WeatherInfo.scss';
 function WeatherInfo({
   city,
   country,
+  date,
   weather,
   description,
   pressure,
@@ -20,7 +21,7 @@ function WeatherInfo({
           <h1>
             {city}, {country}
           </h1>
-          <h4>Day</h4>
+          <h6>{date}</h6>
         </div>
       </section>
       <section className="WeatherInfo-weather">
