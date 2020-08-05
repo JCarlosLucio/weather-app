@@ -1,4 +1,5 @@
 import React from 'react';
+import './WeatherTempToggle.scss';
 
 function WeatherTempToggle({ tempType, setTempType }) {
   return (
