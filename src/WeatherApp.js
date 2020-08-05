@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import WeatherForm from './WeatherForm';
-import WeatherTempSelect from './WeatherTempSelect';
+import WeatherTempToggle from './WeatherTempToggle';
 import WeatherInfo from './WeatherInfo';
 import { convertTemps, makeDate } from './Helpers';
 import './WeatherApp.scss';
@@ -57,7 +57,7 @@ function WeatherApp() {
       <div className="WeatherApp-header">
         <h1>WEATHER APP</h1>
         <WeatherForm setCity={setCity} />
-        <WeatherTempSelect tempType={tempType} setTempType={setTempType} />
+        <WeatherTempToggle tempType={tempType} setTempType={setTempType} />
       </div>
       {isLoading ? (
         <h1>Loading... </h1>
