@@ -62,7 +62,11 @@ function WeatherApp() {
       {isLoading ? (
         <h1>Loading... </h1>
       ) : (
-        <WeatherInfo {...weather} {...convertTemps(temps, tempType)} />
+        <WeatherInfo
+          {...weather}
+          {...convertTemps(temps, tempType)}
+          {...{ date: makeDate() }}
+        />
       )}
     </div>
   );
