@@ -8,6 +8,7 @@ function WeatherTempToggle({ tempType, setTempType }) {
         className=" WeatherTempToggle-left"
         name="toggle-c"
         type="radio"
+        defaultChecked={tempType === 'c'}
         value="c"
         onChange={(e) => {
           setTempType(e.target.value);
@@ -21,6 +22,7 @@ function WeatherTempToggle({ tempType, setTempType }) {
         className="WeatherTempToggle-right"
         name="toggle-f"
         type="radio"
+        defaultChecked={tempType === 'f'}
         value="f"
         onChange={(e) => {
           setTempType(e.target.value);
