@@ -42,9 +42,9 @@
       rgba(62, 5, 116, 1) 100%
     );
     transition: 500ms;
-  }
 
-  button:hover {
-    background-position: right center;
+    &:hover {
+      background-position: right center;
+    }
   }
 }
