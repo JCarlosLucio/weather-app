@@ -8,6 +8,10 @@ function WeatherTempToggle({ tempType, setTempType }) {
         className=" WeatherTempToggle-left"
         name="toggle-c"
         type="radio"
+        value="c"
+        onChange={(e) => {
+          setTempType(e.target.value);
+        }}
       />
       <label htmlFor="toggle-c" className="WeatherTempToggle-btn">
         C
