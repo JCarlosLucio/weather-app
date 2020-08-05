@@ -2,15 +2,26 @@ import React from 'react';
 
 function WeatherTempToggle({ tempType, setTempType }) {
   return (
-    <select
-      value={tempType}
-      onChange={(e) => {
-        setTempType(e.target.value);
-      }}
-    >
-      <option value="c">Celsius</option>
-      <option value="f">Fahrenheit</option>
-    </select>
+    <div className="WeatherTempToggle">
+      <input
+        id="toggle-c"
+        className=" WeatherTempToggle-left"
+        name="toggle-c"
+        type="radio"
+      />
+      <label htmlFor="toggle-c" className="WeatherTempToggle-btn">
+        C
+      </label>
+      <input
+        id="toggle-f"
+        className="WeatherTempToggle-right"
+        name="toggle-f"
+        type="radio"
+      />
+      <label htmlFor="toggle-f" className="WeatherTempToggle-btn">
+        F
+      </label>
+    </div>
   );
 }
 
