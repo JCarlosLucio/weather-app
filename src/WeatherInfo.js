@@ -41,11 +41,11 @@ function WeatherInfo({
       <section className="WeatherInfo-details">
         <div>
           <h6>
-            <i class="fas fa-tachometer-alt" alt-label="pressure" /> {pressure}{' '}
-            hPa
+            <i className="fas fa-tachometer-alt" alt-label="pressure" />{' '}
+            {pressure} hPa
           </h6>
           <h6>
-            <i class="fas fa-tint" alt-label="humidity" /> {humidity}%
+            <i className="fas fa-tint" alt-label="humidity" /> {humidity}%
           </h6>
         </div>
       </section>
