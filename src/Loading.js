@@ -1,8 +1,9 @@
 import React from 'react';
+import './Loading.scss';
 
 function Loading() {
   return (
-    <div>
+    <div className="Loading">
       <i class="far fa-sun" />
       <h3>Consulting weather wizards...</h3>
     </div>
