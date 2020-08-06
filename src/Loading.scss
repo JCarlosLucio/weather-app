@@ -1,0 +1,42 @@
+.Loading {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgb(165, 165, 165);
+  animation: fading 4s infinite ease;
+  i {
+    font-size: 10rem;
+    animation: rotating 4s infinite ease;
+    margin-top: 3rem;
+  }
+  h3 {
+    margin: 2rem;
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
