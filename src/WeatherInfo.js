@@ -7,6 +7,7 @@ function WeatherInfo({
   date,
   weather,
   description,
+  icon,
   pressure,
   humidity,
   temp,
@@ -27,7 +28,9 @@ function WeatherInfo({
       <section className="WeatherInfo-weather">
         <div>
           <h2>{weather}</h2>
-          <h1>🌦</h1>
+          <h1>
+            <i className={icon} alt-label={`${description} icon`} />
+          </h1>
           <h6>{description}</h6>
         </div>
         <div>
