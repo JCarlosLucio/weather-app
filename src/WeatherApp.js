@@ -3,7 +3,7 @@ import WeatherForm from './WeatherForm';
 import WeatherTempToggle from './WeatherTempToggle';
 import WeatherInfo from './WeatherInfo';
 import Loading from './Loading';
-import { convertTemps, makeDate } from './Helpers';
+import { getIconClass, convertTemps, makeDate } from './Helpers';
 import './WeatherApp.scss';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -38,6 +38,7 @@ function WeatherApp() {
         country: weatherData.sys.country,
         weather: weatherData.weather[0].main,
         description: weatherData.weather[0].description,
+        icon: getIconClass(weatherData.weather[0].icon),
         pressure: weatherData.main.pressure,
         humidity: weatherData.main.humidity,
       });
