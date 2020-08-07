@@ -6,6 +6,10 @@
 .WeatherInfo {
   @include flex(column);
   font-size: 1.4rem;
+  i {
+    color: rgb(145, 145, 145);
+  }
+
   &-global {
     @include flex(row);
     align-items: center;
@@ -20,11 +24,22 @@
     align-items: flex-end;
     text-align: center;
     padding: 1rem;
+
     h1 {
       font-size: 4.5rem;
     }
+
     h2 {
       font-size: 1.5rem;
+    }
+
+    i {
+      font-size: 6rem;
+      margin: 1rem 0;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
     }
   }
 
@@ -35,4 +50,77 @@
     padding: 1rem;
     text-align: center;
   }
+}
+
+// classes for Weather icons
+.sun {
+  background-image: linear-gradient(
+      217deg,
+      rgba(255, 0, 0, .8),
+      rgba(255, 0, 0, 0) 71%
+    ),
+    linear-gradient(127deg, rgba(255, 251, 0, 0.6), rgba(0, 255, 0, 0) 71%),
+    linear-gradient(336deg, rgba(255, 196, 0, 0.8), rgba(0, 0, 255, 0) 71%);
+}
+.moon {
+  background-image: linear-gradient(
+      217deg,
+      rgba(0, 89, 253, 0.8),
+      rgba(255, 0, 0, 0) 71%
+    ),
+    linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 71%);
+}
+.rain-sun {
+  background-image: linear-gradient(
+      200deg,
+      rgba(255, 0, 0, .8),
+      rgba(255, 0, 0, 0) 71%
+    ),
+    linear-gradient(127deg, rgba(255, 251, 0, 0.6), rgba(0, 255, 0, 0) 71%),
+    linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 71%);
+}
+.rain-moon {
+  background-image: linear-gradient(
+      217deg,
+      rgba(0, 89, 253, 0.8),
+      rgba(255, 0, 0, 0) 71%
+    ),
+    linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 71%);
+}
+
+.day {
+  background-image: linear-gradient(
+      217deg,
+      rgba(0, 173, 253, 0.8),
+      rgba(255, 0, 0, 0) 71%
+    ),
+    linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 71%);
+}
+
+.night {
+  background-image: linear-gradient(
+      217deg,
+      rgba(0, 89, 253, 0.8),
+      rgba(255, 0, 0, 0) 71%
+    ),
+    linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 71%);
+}
+
+.bolt-day {
+  background-image: linear-gradient(
+      300deg,
+      rgba(229, 231, 120, 0.8),
+      rgba(255, 0, 0, 0) 71%
+    ),
+    linear-gradient(127deg, rgba(0, 81, 255, 0.6), rgba(0, 255, 0, 0) 71%),
+    linear-gradient(336deg, rgba(251, 255, 0, 0.8), rgba(0, 0, 255, 0) 71%);
+}
+.bolt-night {
+  background-image: linear-gradient(
+      300deg,
+      rgba(231, 233, 135, 0.8),
+      rgba(0, 0, 0, 0) 71%
+    ),
+    linear-gradient(127deg, rgba(0, 162, 255, 0.6), rgba(0, 0, 0, 0) 71%),
+    linear-gradient(336deg, rgba(251, 255, 0, 0.8), rgba(0, 0, 255, 0) 71%);
 }
