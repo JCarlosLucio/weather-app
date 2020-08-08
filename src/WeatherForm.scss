@@ -1,12 +1,22 @@
+@mixin desktop {
+  @media (min-width: #{47.99rem}) {
+    @content;
+  }
+}
+
 .WeatherForm {
-  margin: 2rem 0;
+  margin: 1rem 0 1rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
 
+  @include desktop {
+    margin: 2rem 0 1rem 0;
+  }
+
   input[type=text] {
     background-color: rgba(255, 255, 255, 0.315);
-    height: 2.5rem;
+    height: 2.8rem;
     width: 12rem;
     margin: 0.5rem 0 0.5rem 0;
     padding: 0 1rem;
@@ -15,6 +25,12 @@
     text-transform: uppercase;
     border: none;
     transition: background-color 600ms ease;
+
+    @include desktop {
+      height: 3.5rem;
+      width: 20rem;
+      font-size: 1.5rem;
+    }
 
     &:focus:required:invalid {
       background-color: rgba(255, 255, 255, 0.7);
@@ -26,10 +42,10 @@
   }
 
   button {
-    height: 2.5rem;
+    height: 2.8rem;
     border: none;
     padding: 0 1rem;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-family: inherit;
     text-transform: uppercase;
     color: white;
@@ -42,6 +58,12 @@
       rgba(62, 5, 116, 1) 100%
     );
     transition: 500ms;
+
+    @include desktop {
+      height: 3.5rem;
+      font-size: 1.5rem;
+      padding: 0 1.5rem;
+    }
 
     &:hover {
       background-position: right center;
