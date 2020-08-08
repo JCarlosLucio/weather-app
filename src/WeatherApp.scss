@@ -27,6 +27,13 @@
     background-repeat: no-repeat;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
 
+    &-content {
+      @include flexCenter(column);
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 5, 48, 0.6);
+    }
+
     h1 {
       font-size: 3.3rem;
       text-align: center;
