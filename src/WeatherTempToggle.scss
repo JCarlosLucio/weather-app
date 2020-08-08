@@ -1,12 +1,22 @@
+@mixin desktop {
+  @media (min-width: #{47.99rem}) {
+    @content;
+  }
+}
+
 .WeatherTempToggle {
   &-btn {
     display: inline-block;
     padding: 0.46875rem;
     position: relative;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     text-align: center;
     transition: background-image 600ms ease, color 600ms ease;
     z-index: 0;
+
+    @include desktop {
+      font-size: 1.6rem;
+    }
   }
 }
 
