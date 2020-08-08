@@ -3,9 +3,22 @@
   flex-direction: $direction;
 }
 
+@mixin desktop {
+  @media (min-width: #{47.99rem}) {
+    @content;
+  }
+}
+
 .WeatherInfo {
   @include flex(column);
+  align-items: center;
   font-size: 1.4rem;
+  margin-top: 1.5rem;
+
+  @include desktop {
+    font-size: 2rem;
+  }
+
   i {
     color: rgb(145, 145, 145);
   }
@@ -24,9 +37,18 @@
     align-items: flex-end;
     text-align: center;
     padding: 1rem;
+    width: 100%;
+
+    @include desktop {
+      width: 48rem;
+    }
 
     h1 {
       font-size: 4.5rem;
+
+      @include desktop {
+        font-size: 6rem;
+      }
     }
 
     h2 {
@@ -40,6 +62,10 @@
       -webkit-background-clip: text;
       color: transparent;
       -webkit-text-fill-color: transparent;
+
+      @include desktop {
+        font-size: 10rem;
+      }
     }
   }
 
