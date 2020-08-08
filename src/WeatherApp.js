@@ -57,9 +57,11 @@ function WeatherApp() {
   return (
     <div className="WeatherApp">
       <div className="WeatherApp-header">
-        <h1>WEATHER APP</h1>
-        <WeatherForm setCity={setCity} />
-        <WeatherTempToggle tempType={tempType} setTempType={setTempType} />
+        <div className="WeatherApp-header-content">
+          <h1>WEATHER APP</h1>
+          <WeatherForm setCity={setCity} />
+          <WeatherTempToggle tempType={tempType} setTempType={setTempType} />
+        </div>
       </div>
       {isLoading ? (
         <Loading />
