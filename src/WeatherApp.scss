@@ -5,6 +5,12 @@
   align-items: center;
 }
 
+@mixin desktop {
+  @media (min-width: #{47.99rem}) {
+    @content;
+  }
+}
+
 .WeatherApp {
   min-height: 100%;
   font-family: 'Montserrat', sans-serif;
@@ -25,6 +31,10 @@
       font-size: 3.3rem;
       text-align: center;
       margin-top: 0.5rem;
+
+      @include desktop {
+        font-size: 4.5rem;
+      }
     }
   }
 }
