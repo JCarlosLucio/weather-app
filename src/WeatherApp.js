@@ -71,7 +71,7 @@ function WeatherApp() {
         </div>
       </div>
       {isLoading ? hasError ? (
-        <h1>{errorMessage}</h1>
+        <ErrorMessage error={errorMessage} />
       ) : (
         <Loading />
       ) : (
