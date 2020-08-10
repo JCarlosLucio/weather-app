@@ -55,7 +55,7 @@ function WeatherApp() {
       setIsLoading(false);
     } catch (e) {
       setHasError(true);
-
+      setErrorMessage(e.message);
       console.error(e);
     }
   };
