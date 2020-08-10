@@ -19,6 +19,7 @@ function WeatherApp() {
 
   useEffect(
     () => {
+      setHasError(false);
       setIsLoading(true);
       getWeather(city);
     },
@@ -52,6 +53,7 @@ function WeatherApp() {
       });
       setIsLoading(false);
     } catch (e) {
+      setHasError(true);
       console.error(e);
     }
   };
