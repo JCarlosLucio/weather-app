@@ -16,6 +16,7 @@ function WeatherApp() {
   const [tempType, setTempType] = useState('c');
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('Something went wrong...');
 
   useEffect(
     () => {
@@ -54,6 +55,7 @@ function WeatherApp() {
       setIsLoading(false);
     } catch (e) {
       setHasError(true);
+
       console.error(e);
     }
   };
