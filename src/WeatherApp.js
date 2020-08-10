@@ -36,6 +36,7 @@ function WeatherApp() {
       setWeather({
         city: weatherData.name,
         country: weatherData.sys.country,
+        date: makeDate(),
         weather: weatherData.weather[0].main,
         description: weatherData.weather[0].description,
         icon: getIconClass(weatherData.weather[0].icon),
@@ -66,11 +67,7 @@ function WeatherApp() {
       {isLoading ? (
         <Loading />
       ) : (
-        <WeatherInfo
-          {...weather}
-          {...convertTemps(temps, tempType)}
-          {...{ date: makeDate() }}
-        />
+        <WeatherInfo {...weather} {...convertTemps(temps, tempType)} />
       )}
     </div>
   );
