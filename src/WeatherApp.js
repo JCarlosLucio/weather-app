@@ -67,7 +67,9 @@ function WeatherApp() {
           <WeatherTempToggle tempType={tempType} setTempType={setTempType} />
         </div>
       </div>
-      {isLoading ? (
+      {isLoading ? hasError ? (
+        <h1>Something went wrong...</h1>
+      ) : (
         <Loading />
       ) : (
         <WeatherInfo {...weather} {...convertTemps(temps, tempType)} />
