@@ -15,6 +15,7 @@ function WeatherApp() {
   const [temps, setTemps] = useState(null);
   const [tempType, setTempType] = useState('c');
   const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(
     () => {
