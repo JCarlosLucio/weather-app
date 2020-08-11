@@ -66,6 +66,7 @@ function WeatherApp() {
     <div className="WeatherApp">
       <div className="WeatherApp-header">
         <div className="WeatherApp-header-content">
+          <MadeBy link="https://github.com/JCarlosLucio/weather-app" />
           <h1>WEATHER APP</h1>
           <WeatherForm setCity={setCity} />
           <WeatherTempToggle tempType={tempType} setTempType={setTempType} />
