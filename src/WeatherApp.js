@@ -4,6 +4,7 @@ import WeatherTempToggle from './WeatherTempToggle';
 import WeatherInfo from './WeatherInfo';
 import Loading from './Loading';
 import ErrorMessage from './ErrorMessage';
+import MadeBy from './MadeBy';
 import { getIconClass, convertTemps, makeDate } from './Helpers';
 import './WeatherApp.scss';
 
