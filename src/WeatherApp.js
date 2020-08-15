@@ -17,55 +17,10 @@ function WeatherApp() {
   const [weather, setWeather] = useState(null);
   const [temps, setTemps] = useState(null);
   const [tempType, setTempType] = useState('c');
-  const [isLoading, setIsLoading] = useState(false);
-  const [hasError, setHasError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('Something went wrong...');
 
   const url =
     city &&
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
-
-  useEffect(
-    () => {
-      setHasError(false);
-      setIsLoading(true);
-      getWeather(city);
-    },
-    [city]
-  );
-
-  const getWeather = async (city) => {
-    try {
-      const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
-      );
-      const weatherData = await res.json();
-      console.log(weatherData);
-      if (weatherData.cod !== 200)
-        throw new Error(`${weatherData.cod}: ${weatherData.message}`);
-      setWeather({
-        city: weatherData.name,
-        country: weatherData.sys.country,
-        date: makeDate(),
-        weather: weatherData.weather[0].main,
-        description: weatherData.weather[0].description,
-        icon: getIconClass(weatherData.weather[0].icon),
-        pressure: weatherData.main.pressure,
-        humidity: weatherData.main.humidity,
-      });
-      setTemps({
-        temp: weatherData.main.temp,
-        max: weatherData.main['temp_max'],
-        min: weatherData.main['temp_min'],
-        feelsLike: weatherData.main['feels_like'],
-      });
-      setIsLoading(false);
-    } catch (e) {
-      setHasError(true);
-      setErrorMessage(e.message);
-      console.error(e);
-    }
-  };
 
   return (
     <div className="WeatherApp">
