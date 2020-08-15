@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import useFetch from './hooks/useFetch';
 import useWeather from './hooks/useWeather';
 import WeatherForm from './WeatherForm';
@@ -14,7 +14,6 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 function WeatherApp() {
   const [city, setCity] = useState('london');
-  const [temps, setTemps] = useState(null);
   const [tempType, setTempType] = useState('c');
 
   const url =
@@ -22,21 +21,7 @@ function WeatherApp() {
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
 
   const { data, isLoading, hasError, errorMessage } = useFetch(url);
-  const { weather } = useWeather(data);
-
-  useEffect(
-    () => {
-      if (data !== null) {
-        setTemps({
-          temp: data.main.temp,
-          max: data.main['temp_max'],
-          min: data.main['temp_min'],
-          feelsLike: data.main['feels_like'],
-        });
-      }
-    },
-    [data]
-  );
+  const { weather, temps } = useWeather(data);
 
   return (
     <div className="WeatherApp">
