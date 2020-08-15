@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import useFetch from './hooks/useFetch';
+import useWeather from './hooks/useWeather';
 import WeatherForm from './WeatherForm';
 import WeatherTempToggle from './WeatherTempToggle';
 import WeatherInfo from './WeatherInfo';
 import Loading from './Loading';
 import ErrorMessage from './ErrorMessage';
 import MadeBy from './MadeBy';
-import { getIconClass, convertTemps, makeDate } from './Helpers';
+import { convertTemps } from './Helpers';
 import './WeatherApp.scss';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 function WeatherApp() {
-  // make state for weather response
   const [city, setCity] = useState('london');
-  const [weather, setWeather] = useState(null);
   const [temps, setTemps] = useState(null);
   const [tempType, setTempType] = useState('c');
 
@@ -23,20 +22,11 @@ function WeatherApp() {
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
 
   const { data, isLoading, hasError, errorMessage } = useFetch(url);
+  const { weather } = useWeather(data);
 
   useEffect(
     () => {
       if (data !== null) {
-        setWeather({
-          city: data.name,
-          country: data.sys.country,
-          date: makeDate(),
-          weather: data.weather[0].main,
-          description: data.weather[0].description,
-          icon: getIconClass(data.weather[0].icon),
-          pressure: data.main.pressure,
-          humidity: data.main.humidity,
-        });
         setTemps({
           temp: data.main.temp,
           max: data.main['temp_max'],
