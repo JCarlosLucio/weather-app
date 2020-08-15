@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import useFetch from './hooks/useFetch';
 import useWeather from './hooks/useWeather';
 import WeatherForm from './WeatherForm';
 import WeatherTempToggle from './WeatherTempToggle';
@@ -10,18 +9,12 @@ import MadeBy from './MadeBy';
 import { convertTemps } from './Helpers';
 import './WeatherApp.scss';
 
-const API_KEY = process.env.REACT_APP_API_KEY;
-
 function WeatherApp() {
   const [city, setCity] = useState('london');
+  const { weather, temps, isLoading, hasError, errorMessage } = useWeather(
+    city
+  );
   const [tempType, setTempType] = useState('c');
-
-  const url =
-    city &&
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
-
-  const { data, isLoading, hasError, errorMessage } = useFetch(url);
-  const { weather, temps } = useWeather(data);
 
   return (
     <div className="WeatherApp">
