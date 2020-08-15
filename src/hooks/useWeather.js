@@ -1,7 +1,15 @@
 import { useState, useEffect } from 'react';
+import useFetch from './useFetch';
 import { getIconClass, makeDate } from '../Helpers';
 
-function useWeather(data = null) {
+const API_KEY = process.env.REACT_APP_API_KEY;
+
+function useWeather(query) {
+  const url =
+    query &&
+    `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${API_KEY}`;
+
+  const { data, isLoading, hasError, errorMessage } = useFetch(url);
   const [weather, setWeather] = useState(data);
   const [temps, setTemps] = useState(data);
 
@@ -28,7 +36,7 @@ function useWeather(data = null) {
     },
     [data]
   );
-  return { weather, temps };
+  return { weather, temps, isLoading, hasError, errorMessage };
 }
 
 export default useWeather;
