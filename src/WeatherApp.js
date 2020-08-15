@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useWeather from './hooks/useWeather';
+import useWeather from './hooks/useOpenWeatherApi';
 import WeatherForm from './WeatherForm';
 import WeatherTempToggle from './WeatherTempToggle';
 import WeatherInfo from './WeatherInfo';
