@@ -22,6 +22,8 @@ function WeatherApp() {
     city &&
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
 
+  const { data, isLoading, hasError, errorMessage } = useFetch(url);
+
   return (
     <div className="WeatherApp">
       <div className="WeatherApp-header">
