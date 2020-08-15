@@ -20,6 +20,10 @@ function WeatherApp() {
   const [hasError, setHasError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('Something went wrong...');
 
+  const url =
+    city &&
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
+
   useEffect(
     () => {
       setHasError(false);
