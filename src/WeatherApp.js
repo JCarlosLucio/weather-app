@@ -24,6 +24,24 @@ function WeatherApp() {
 
   const { data, isLoading, hasError, errorMessage } = useFetch(url);
 
+  useEffect(
+    () => {
+      if (data !== null) {
+        setWeather({
+          city: data.name,
+          country: data.sys.country,
+          date: makeDate(),
+          weather: data.weather[0].main,
+          description: data.weather[0].description,
+          icon: getIconClass(data.weather[0].icon),
+          pressure: data.main.pressure,
+          humidity: data.main.humidity,
+        });
+      }
+    },
+    [data]
+  );
+
   return (
     <div className="WeatherApp">
       <div className="WeatherApp-header">
