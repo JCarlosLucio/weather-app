@@ -37,6 +37,12 @@ function WeatherApp() {
           pressure: data.main.pressure,
           humidity: data.main.humidity,
         });
+        setTemps({
+          temp: data.main.temp,
+          max: data.main['temp_max'],
+          min: data.main['temp_min'],
+          feelsLike: data.main['feels_like'],
+        });
       }
     },
     [data]
