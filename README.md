@@ -2,7 +2,7 @@
 from The Odin Project's [curriculum](https://www.theodinproject.com/courses/javascript/lessons/weather-app)
 
 ## Overview
-A weather forecast site using the weather API made using REACT
+A weather forecast app using the OpenWeather API made using REACT
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
