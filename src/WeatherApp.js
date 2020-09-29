@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useLocalStorageState from './hooks/useLocalStorageState';
 import useWeather from './hooks/useOpenWeatherApi';
 import WeatherForm from './WeatherForm';
 import WeatherTempToggle from './WeatherTempToggle';
@@ -10,7 +11,7 @@ import { convertTemps } from './Helpers';
 import './WeatherApp.scss';
 
 function WeatherApp() {
-  const [city, setCity] = useState('london');
+  const [city, setCity] = useLocalStorageState('city', 'london');
   const { weather, temps, isLoading, hasError, errorMessage } = useWeather(
     city
   );
