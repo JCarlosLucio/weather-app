@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useLocalStorageState from './hooks/useLocalStorageState';
 import useWeather from './hooks/useOpenWeatherApi';
 import WeatherForm from './WeatherForm';
@@ -15,7 +15,7 @@ function WeatherApp() {
   const { weather, temps, isLoading, hasError, errorMessage } = useWeather(
     city
   );
-  const [tempType, setTempType] = useState('c');
+  const [tempType, setTempType] = useLocalStorageState('tempType', 'c');
 
   return (
     <div className="WeatherApp">
