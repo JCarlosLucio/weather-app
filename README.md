@@ -9,9 +9,13 @@
 
 ## ✨ Demo
 
-[![Weather App Homepage](../media/weather-app-desktop.webp?raw=true)](https://lucio-weather-app.netlify.app/)
+[![Weather App Homepage](../media/weather-app-desktop.webp?raw=true)](https://lucio-weather-app.pages.dev/)
 
 ## 📜 Docs
+
+### Prerequisites
+
+- node >= 16.9
 
 ### Install
 
