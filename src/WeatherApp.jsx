@@ -1,4 +1,3 @@
-import React from 'react';
 import useLocalStorageState from './hooks/useLocalStorageState';
 import useWeather from './hooks/useOpenWeatherApi';
 import WeatherForm from './WeatherForm';
@@ -7,14 +6,13 @@ import WeatherInfo from './WeatherInfo';
 import Loading from './Loading';
 import ErrorMessage from './ErrorMessage';
 import MadeBy from './MadeBy';
-import { convertTemps } from './Helpers';
+import { convertTemps } from './helpers';
 import './WeatherApp.scss';
 
 function WeatherApp() {
   const [city, setCity] = useLocalStorageState('city', 'london');
-  const { weather, temps, isLoading, hasError, errorMessage } = useWeather(
-    city
-  );
+  const { weather, temps, isLoading, hasError, errorMessage } =
+    useWeather(city);
   const [tempType, setTempType] = useLocalStorageState('tempType', 'c');
 
   return (
@@ -27,10 +25,12 @@ function WeatherApp() {
           <WeatherTempToggle tempType={tempType} setTempType={setTempType} />
         </div>
       </div>
-      {isLoading ? hasError ? (
-        <ErrorMessage error={errorMessage} />
-      ) : (
-        <Loading />
+      {isLoading ? (
+        hasError ? (
+          <ErrorMessage error={errorMessage} />
+        ) : (
+          <Loading />
+        )
       ) : (
         <WeatherInfo {...weather} {...convertTemps(temps, tempType)} />
       )}

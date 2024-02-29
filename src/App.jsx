@@ -1,4 +1,3 @@
-import React from 'react';
 import WeatherApp from './WeatherApp';
 import './App.scss';
 

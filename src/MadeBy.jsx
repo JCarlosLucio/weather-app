@@ -1,4 +1,3 @@
-import React from 'react';
 import './MadeBy.scss';
 
 function MadeBy({ link }) {

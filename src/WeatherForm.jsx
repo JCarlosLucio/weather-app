@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './WeatherForm.scss';
 
 function WeatherForm({ setCity }) {
