@@ -1,6 +1,8 @@
 {
   "name": "weather-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "Juan Carlos Lucio",
+  "description": "A weather forecast app using OpenWeather API",
   "private": true,
   "type": "module",
   "scripts": {
