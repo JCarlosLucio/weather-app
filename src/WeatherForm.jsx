@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import './WeatherForm.scss';
 
 function WeatherForm({ setCity }) {
@@ -25,5 +26,9 @@ function WeatherForm({ setCity }) {
     </form>
   );
 }
+
+WeatherForm.propTypes = {
+  setCity: PropTypes.func,
+};
 
 export default WeatherForm;

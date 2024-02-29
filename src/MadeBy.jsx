@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './MadeBy.scss';
 
 function MadeBy({ link }) {
@@ -9,5 +10,9 @@ function MadeBy({ link }) {
     </div>
   );
 }
+
+MadeBy.propTypes = {
+  link: PropTypes.string,
+};
 
 export default MadeBy;

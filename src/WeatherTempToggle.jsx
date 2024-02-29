@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './WeatherTempToggle.scss';
 
 function WeatherTempToggle({ tempType, setTempType }) {
@@ -34,5 +35,10 @@ function WeatherTempToggle({ tempType, setTempType }) {
     </div>
   );
 }
+
+WeatherTempToggle.propTypes = {
+  tempType: PropTypes.string,
+  setTempType: PropTypes.func,
+};
 
 export default WeatherTempToggle;

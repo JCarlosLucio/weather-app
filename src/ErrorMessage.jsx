@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './ErrorMessage.scss';
 
 function ErrorMessage({ error }) {
@@ -8,5 +9,9 @@ function ErrorMessage({ error }) {
     </div>
   );
 }
+
+ErrorMessage.propTypes = {
+  error: PropTypes.string,
+};
 
 export default ErrorMessage;
