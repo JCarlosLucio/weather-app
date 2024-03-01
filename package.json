@@ -5,6 +5,17 @@
   "description": "A weather forecast app using OpenWeather API",
   "private": true,
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JCarlosLucio/weather-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JCarlosLucio/weather-app/issues"
+  },
+  "homepage": "https://github.com/JCarlosLucio/weather-app#readme",
+  "engines": {
+    "node": ">= 16"
+  },
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
@@ -28,6 +39,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "sass": "^1.71.1",
-    "vite": "^5.1.4"
+    "vite": "^5.1.4",
+    "vite-plugin-pwa": "^0.19.2"
   }
 }
