@@ -21,6 +21,9 @@
     @include flexCenter(column);
     height: 24rem;
     color: white;
+    @include desktop {
+      background-image: url('https://picsum.photos/id/1019/1920/400');
+    }
     background-image: url('https://picsum.photos/id/1019/1000/400');
     background-position: 50% 0%;
     background-size: cover;
